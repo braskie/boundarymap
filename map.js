@@ -12,9 +12,11 @@ var schoolColors = {
     "Royal Oaks": "#C20202",
     "Token Springs": "#25476A",
     "Westside": "#035717",
+
     "Central Heights": "#025157",
     "Patrick Marsh": "#2C3482",
     "Prairie View": "#6F0000",
+
     "Sun Prairie East": "#D12027",
     "Sun Prairie West": "#112644",
     "Prairie Phoenix Academy": "#0B522C"
@@ -130,11 +132,13 @@ fetch('districts.geojson')
             function collectSchoolInfo(layer, typeName) {
                 if (!map.hasLayer(layer)) return;
                 layer.eachLayer(function(item) {
-                    if (item.feature && turf.booleanPointInPolygon(clickedPoint, item.feature)) {
-                        containingSchools.push({
-                            type: typeName,
-                            school: item.feature.properties.School
-                        });
+                    if (item.feature && (item.feature.geometry.type === 'Polygon' || item.feature.geometry.type === 'MultiPolygon')) {
+                        if (turf.booleanPointInPolygon(clickedPoint, item.feature)) {
+                            containingSchools.push({
+                                type: typeName,
+                                school: item.feature.properties.School
+                            });
+                        }
                     }
                 });
             }
