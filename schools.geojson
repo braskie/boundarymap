@@ -3,6 +3,244 @@
   "features": [
     {
       "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2161143407821,
+          43.1937599838267
+        ]
+      },
+      "properties": {
+        "School": "Northside Elementary",
+        "Type": "Elementary",
+        "Address": "230 W Klubertanz Dr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2033884268172,
+          43.1890047831387
+        ]
+      },
+      "properties": {
+        "School": "Eastside Elementary",
+        "Type": "Elementary",
+        "Address": "661 Elizabeth Ln"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2357616703928,
+          43.1816817244869
+        ]
+      },
+      "properties": {
+        "School": "Westside Elementary",
+        "Type": "Elementary",
+        "Address": "1320 Buena Vista Dr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2205968197331,
+          43.1796454398157
+        ]
+      },
+      "properties": {
+        "School": "Prairie Pheonix Academy",
+        "Type": "High",
+        "Address": "220 Kroncke Dr"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Central Heights Middle School",
+        "Type": "Middle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2195686,
+          43.1796325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2560099880942,
+          43.1848511409353
+        ]
+      },
+      "properties": {
+        "School": "Prairie View Middle",
+        "Type": "Middle",
+        "Address": "400 N Thompson Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2527759442613,
+          43.1846335757255
+        ]
+      },
+      "properties": {
+        "School": "Royal Oaks Elementary",
+        "Type": "Elementary",
+        "Address": "2215 Pennsylvania Ave"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.1942270932448,
+          43.1990449280608
+        ]
+      },
+      "properties": {
+        "School": "Patrick Marsh Middle",
+        "Type": "Middle",
+        "Address": "1351 Columbus St"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.227091318391,
+          43.1957368572357
+        ]
+      },
+      "properties": {
+        "School": "C.H. Bird Elementary",
+        "Type": "Elementary",
+        "Address": "1170 N Bird St"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2808390467887,
+          43.1885288773459
+        ]
+      },
+      "properties": {
+        "School": "Horizon Elementary",
+        "Type": "Elementary",
+        "Address": "625 N Heatherstone Dr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2544837492949,
+          43.1652104441702
+        ]
+      },
+      "properties": {
+        "School": "Creekside Elementary",
+        "Type": "Elementary",
+        "Address": "1251 O'Keeffe Ave"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2093294021514,
+          43.1733650013463
+        ]
+      },
+      "properties": {
+        "School": "Sun Prairie East High School",
+        "Type": "High",
+        "Address": "888 Grove St"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2659377165064,
+          43.1794094832186
+        ]
+      },
+      "properties": {
+        "School": "Meadow View Elementary",
+        "Type": "Elementary",
+        "Address": "200 N Grand Ave"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2495060309184,
+          43.2033116347873
+        ]
+      },
+      "properties": {
+        "School": "Token Springs Elementary",
+        "Type": "Elementary",
+        "Address": "1435 N Thompson Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2729213492162,
+          43.1805238029549
+        ]
+      },
+      "properties": {
+        "School": "Sun Prairie West High School",
+        "Type": "High",
+        "Address": "2850 Ironwood Drive"
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
         "School": "Token Springs",
         "Type": "Elementary",
