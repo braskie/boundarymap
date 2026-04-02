@@ -12,9 +12,10 @@
         ]
       },
       "properties": {
-        "School": "Northside Elementary",
-        "Type": "Elementary",
-        "Address": "230 W Klubertanz Dr"
+        "schoolid": 3,
+        "schoolname": "Northside Elementary",
+        "stage": "Elementary",
+        "address": "230 W Klubertanz Dr"
       }
     },
     {
@@ -28,9 +29,9 @@
         ]
       },
       "properties": {
-        "School": "Eastside Elementary",
-        "Type": "Elementary",
-        "Address": "661 Elizabeth Ln"
+        "schoolname": "Eastside Elementary",
+        "stage": "Elementary",
+        "address": "661 Elizabeth Ln"
       }
     },
     {
@@ -44,9 +45,9 @@
         ]
       },
       "properties": {
-        "School": "Westside Elementary",
-        "Type": "Elementary",
-        "Address": "1320 Buena Vista Dr"
+        "schoolname": "Westside Elementary",
+        "stage": "Elementary",
+        "address": "1320 Buena Vista Dr"
       }
     },
     {
@@ -60,16 +61,17 @@
         ]
       },
       "properties": {
-        "School": "Prairie Pheonix Academy",
-        "Type": "High",
-        "Address": "220 Kroncke Dr"
+        "schoolname": "Prairie Pheonix Academy",
+        "stage": "High",
+        "address": "220 Kroncke Dr"
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "NAME": "Central Heights Middle School",
-        "Type": "Middle"
+        "schoolname": "Central Heights Middle School",
+        "stage": "Middle",
+        "address": "220 Kroncke Dr"
       },
       "geometry": {
         "type": "Point",
@@ -90,9 +92,9 @@
         ]
       },
       "properties": {
-        "School": "Prairie View Middle",
-        "Type": "Middle",
-        "Address": "400 N Thompson Rd"
+        "schoolname": "Prairie View Middle",
+        "stage": "Middle",
+        "address": "400 N Thompson Rd"
       }
     },
     {
@@ -106,9 +108,9 @@
         ]
       },
       "properties": {
-        "School": "Royal Oaks Elementary",
-        "Type": "Elementary",
-        "Address": "2215 Pennsylvania Ave"
+        "schoolname": "Royal Oaks Elementary",
+        "stage": "Elementary",
+        "address": "2215 Pennsylvania Ave"
       }
     },
     {
@@ -122,9 +124,9 @@
         ]
       },
       "properties": {
-        "School": "Patrick Marsh Middle",
-        "Type": "Middle",
-        "Address": "1351 Columbus St"
+        "schoolname": "Patrick Marsh Middle",
+        "stage": "Middle",
+        "address": "1351 Columbus St"
       }
     },
     {
@@ -138,9 +140,9 @@
         ]
       },
       "properties": {
-        "School": "C.H. Bird Elementary",
-        "Type": "Elementary",
-        "Address": "1170 N Bird St"
+        "schoolname": "C.H. Bird Elementary",
+        "stage": "Elementary",
+        "address": "1170 N Bird St"
       }
     },
     {
@@ -154,9 +156,9 @@
         ]
       },
       "properties": {
-        "School": "Horizon Elementary",
-        "Type": "Elementary",
-        "Address": "625 N Heatherstone Dr"
+        "schoolname": "Horizon Elementary",
+        "stage": "Elementary",
+        "address": "625 N Heatherstone Dr"
       }
     },
     {
@@ -170,9 +172,9 @@
         ]
       },
       "properties": {
-        "School": "Creekside Elementary",
-        "Type": "Elementary",
-        "Address": "1251 O'Keeffe Ave"
+        "schoolname": "Creekside Elementary",
+        "stage": "Elementary",
+        "address": "1251 O'Keeffe Ave"
       }
     },
     {
@@ -186,9 +188,9 @@
         ]
       },
       "properties": {
-        "School": "Sun Prairie East High School",
-        "Type": "High",
-        "Address": "888 Grove St"
+        "schoolname": "Sun Prairie East High School",
+        "stage": "High",
+        "address": "888 Grove St"
       }
     },
     {
@@ -202,9 +204,9 @@
         ]
       },
       "properties": {
-        "School": "Meadow View Elementary",
-        "Type": "Elementary",
-        "Address": "200 N Grand Ave"
+        "schoolname": "Meadow View Elementary",
+        "stage": "Elementary",
+        "address": "200 N Grand Ave"
       }
     },
     {
@@ -218,9 +220,9 @@
         ]
       },
       "properties": {
-        "School": "Token Springs Elementary",
-        "Type": "Elementary",
-        "Address": "1435 N Thompson Rd"
+        "schoolname": "Token Springs Elementary",
+        "stage": "Elementary",
+        "address": "1435 N Thompson Rd"
       }
     },
     {
@@ -234,16 +236,16 @@
         ]
       },
       "properties": {
-        "School": "Sun Prairie West High School",
-        "Type": "High",
-        "Address": "2850 Ironwood Drive"
+        "schoolname": "Sun Prairie West High School",
+        "stage": "High",
+        "address": "2850 Ironwood Drive"
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "School": "Token Springs",
-        "Type": "Elementary",
+        "schoolname": "Token Springs",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -1107,8 +1109,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Sun Prairie East",
-        "Type": "High",
+        "schoolname": "Sun Prairie East",
+        "stage": "High",
         "visibility": false
       },
       "geometry": {
@@ -3044,8 +3046,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Central Heights",
-        "Type": "Middle",
+        "schoolname": "Central Heights",
+        "stage": "Middle",
         "visibility": false
       },
       "geometry": {
@@ -5067,8 +5069,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Royal Oaks",
-        "Type": "Elementary",
+        "schoolname": "Royal Oaks",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -5504,8 +5506,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "C.H. Bird",
-        "Type": "Elementary",
+        "schoolname": "C.H. Bird",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -5769,8 +5771,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Northside",
-        "Type": "Elementary",
+        "schoolname": "Northside",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -6290,8 +6292,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Creekside",
-        "Type": "Elementary",
+        "schoolname": "Creekside",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -6863,8 +6865,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Eastside ",
-        "Type": "Elementary",
+        "schoolname": "Eastside ",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -7644,8 +7646,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Westside",
-        "Type": "Elementary",
+        "schoolname": "Westside",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -7855,8 +7857,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Sun Prairie West",
-        "Type": "High"
+        "schoolname": "Sun Prairie West",
+        "stage": "High"
       },
       "geometry": {
         "type": "Polygon",
@@ -8553,8 +8555,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Patrick Marsh",
-        "Type": "Middle",
+        "schoolname": "Patrick Marsh",
+        "stage": "Middle",
         "visibility": false
       },
       "geometry": {
@@ -9742,8 +9744,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Prairie View",
-        "Type": "Middle",
+        "schoolname": "Prairie View",
+        "stage": "Middle",
         "visibility": false
       },
       "geometry": {
@@ -10565,8 +10567,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Horizon",
-        "Type": "Elementary",
+        "schoolname": "Horizon",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {
@@ -10914,8 +10916,8 @@
     {
       "type": "Feature",
       "properties": {
-        "School": "Meadow View",
-        "Type": "Elementary",
+        "schoolname": "Meadow View",
+        "stage": "Elementary",
         "visibility": false
       },
       "geometry": {

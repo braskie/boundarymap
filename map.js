@@ -1,28 +1,6 @@
 // Initialize the map (Centered on Sun Prairie, WI)
 var map = L.map('map').setView([43.18, -89.21], 12);
 
-// School color mapping by school name
-var schoolColors = {
-    "C.H. Bird": "#2C3482",
-    "Creekside": "#085465",
-    "Eastside": "#2C3482",
-    "Horizon": "#6F0000",
-    "Meadow View": "#088093",
-    "Northside": "#00005B",
-    "Royal Oaks": "#C20202",
-    "Token Springs": "#25476A",
-    "Westside": "#035717",
-
-    "Central Heights": "#025157",
-    "Patrick Marsh": "#2C3482",
-    "Prairie View": "#6F0000",
-
-    "Sun Prairie East": "#D12027",
-    "Sun Prairie West": "#112644",
-    "Prairie Phoenix Academy": "#0B522C"
-    // Add more school names and colors as needed
-};
-
 // Load OpenStreetMap Tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
@@ -47,115 +25,59 @@ var geocoder = L.Control.geocoder({
 })
 .addTo(map);
 
-// Load school district boundaries
+// Load district polygons and add to map
 fetch('districts.geojson')
-.then(response => response.json())
-.then(data => {
-    var schoolDistricts = L.geoJSON(data, {
-        style: function(feature) {
-            if (feature.properties.DISTRICT === 'Sun Prairie Area') {
-                return {color: 'black', weight: 1, fill: false};
-            } else {
-                return {color: 'black', weight: 1, fillColor: 'lightblue', fillOpacity: 0.3};
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+        var districtLayer = L.geoJSON(data, {
+            style: {
+                color: '#ff0000',
+                weight: 2,
+                fillColor: '#ffcccc',
+                fillOpacity: 0.3
             }
-        },
-        onEachFeature: function(feature, layer) {
-            layer.bindPopup('District: ' + feature.properties.DISTRICT);
-        }
+        }).addTo(map);
     });
 
-    // Load schools
-    fetch('schools.geojson')
-    .then(response => response.json())
-    .then(schoolsData => {
-        function getDistrict(schoolFeature, districtsData) {
-            for (var district of districtsData.features) {
-                if (turf.booleanWithin(schoolFeature, district)) {
-                    return district.properties.DISTRICT;
+// Load school polygons and add each as a separate overlay layer grouped by stage
+fetch('schools.geojson')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+        var stageGroups = {}; // stage-based groups, e.g. Elementary/Middle/High
+
+        data.features.forEach(function(feature, idx) {
+            var stage = feature.properties.stage || 'Unknown';
+            var schoolName = feature.properties.schoolname;
+
+            var schoolLayer = L.geoJSON(feature, {
+                style: {
+                    color: '#0066cc',
+                    weight: 1,
+                    fillColor: '#3399ff',
+                    fillOpacity: 0.35
+                },
+                onEachFeature: function(feature, layer) {
+                    var popup = [];
+                    popup.push('<strong>' + schoolName + '</strong>');
+                    if (feature.properties.address) popup.push(feature.properties.address);
+                    if (popup.length) layer.bindPopup(popup.join('<br />'));
                 }
-            }
-            return "Unknown";
-        }
+            });
 
-        var elementarySchools = L.geoJSON(schoolsData, {
-            filter: function(feature) { return feature.properties.Type === 'Elementary'; },
-            style: function(feature) {
-                return {
-                    color: schoolColors[feature.properties.School] || 'red',
-                    weight: 2,
-                    opacity: 0.5,
-                    fillOpacity: 0.5
-                };
+            if (!stageGroups[stage]) {
+                stageGroups[stage] = L.layerGroup();
             }
+            stageGroups[stage].addLayer(schoolLayer);
         });
 
-        var middleSchools = L.geoJSON(schoolsData, {
-            filter: function(feature) { return feature.properties.Type === 'Middle'; },
-            style: function(feature) {
-                return {
-                    color: schoolColors[feature.properties.School] || 'blue',
-                    weight: 2,
-                    opacity: 0.5,
-                    fillOpacity: 0.5
-                };
-            }
+        // Option 1: show all stage groups initially
+        Object.values(stageGroups).forEach(function(group) {
+            group.addTo(map);
         });
 
-        var highSchools = L.geoJSON(schoolsData, {
-            filter: function(feature) { return feature.properties.Type === 'High'; },
-            style: function(feature) {
-                return {
-                    color: schoolColors[feature.properties.School] || 'green',
-                    weight: 2,
-                    opacity: 0.5,
-                    fillOpacity: 0.5
-                };
-            }
-        });
-
-        var overlays = {
-            "School Districts": schoolDistricts,
-            "Elementary Schools": elementarySchools,
-            "Middle Schools": middleSchools,
-            "High Schools": highSchools
-        };
-        L.control.layers(null, overlays).addTo(map);
-
-        elementarySchools.addTo(map);
-        middleSchools.addTo(map);
-        highSchools.addTo(map);
-
-        map.on('click', function(e) {
-            var clickedPoint = turf.point([e.latlng.lng, e.latlng.lat]);
-            var containingSchools = [];
-
-            function collectSchoolInfo(layer, typeName) {
-                if (!map.hasLayer(layer)) return;
-                layer.eachLayer(function(item) {
-                    if (item.feature && (item.feature.geometry.type === 'Polygon' || item.feature.geometry.type === 'MultiPolygon')) {
-                        if (turf.booleanPointInPolygon(clickedPoint, item.feature)) {
-                            containingSchools.push({
-                                type: typeName,
-                                school: item.feature.properties.School
-                            });
-                        }
-                    }
-                });
-            }
-
-            collectSchoolInfo(elementarySchools, 'Elementary');
-            collectSchoolInfo(middleSchools, 'Middle');
-            collectSchoolInfo(highSchools, 'High');
-
-            if (containingSchools.length > 0) {
-                var popupContent = containingSchools.map(function(school) {
-                    return school.type + ': ' + school.school;
-                }).join('<br>');
-                L.popup()
-                    .setLatLng(e.latlng)
-                    .setContent(popupContent)
-                    .openOn(map);
-            }
-        });
+        // Add stage groups to layer control
+        L.control.layers(null, stageGroups, { collapsed: false, position: 'topright' }).addTo(map);
+    })
+    .catch(function(err) {
+        console.error('Failed to load school polygons:', err);
     });
-});
