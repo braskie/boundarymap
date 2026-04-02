@@ -26,9 +26,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
-// Add the Search Bar
+// Add the Search Bar (Wisconsin only)
 var geocoder = L.Control.geocoder({
-    defaultMarkGeocode: false
+    defaultMarkGeocode: false,
+    geocoder: L.Control.Geocoder.nominatim({
+        geocodingQueryParams: {
+            countrycodes: 'us',
+            viewbox: '-92.889,47.080,-86.249,42.491', // WI bbox: west,north,east,south
+            bounded: 1
+        }
+    })
 })
 .on('markgeocode', function(e) {
     var latlng = e.geocode.center;
@@ -119,19 +126,26 @@ fetch('districts.geojson')
         map.on('click', function(e) {
             var clickedPoint = turf.point([e.latlng.lng, e.latlng.lat]);
             var containingSchools = [];
-            schoolsData.features.forEach(function(feature) {
-                if (turf.booleanPointInPolygon(clickedPoint, feature)) {
-                    var district = getDistrict(feature, data);
-                    containingSchools.push({
-                        type: feature.properties.Type,
-                        school: feature.properties.School,
-                        district: district
-                    });
-                }
-            });
+
+            function collectSchoolInfo(layer, typeName) {
+                if (!map.hasLayer(layer)) return;
+                layer.eachLayer(function(item) {
+                    if (item.feature && turf.booleanPointInPolygon(clickedPoint, item.feature)) {
+                        containingSchools.push({
+                            type: typeName,
+                            school: item.feature.properties.School
+                        });
+                    }
+                });
+            }
+
+            collectSchoolInfo(elementarySchools, 'Elementary');
+            collectSchoolInfo(middleSchools, 'Middle');
+            collectSchoolInfo(highSchools, 'High');
+
             if (containingSchools.length > 0) {
                 var popupContent = containingSchools.map(function(school) {
-                    return school.school;
+                    return school.type + ': ' + school.school;
                 }).join('<br>');
                 L.popup()
                     .setLatLng(e.latlng)
