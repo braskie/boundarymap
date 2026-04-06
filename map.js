@@ -3,7 +3,7 @@ const map = L.map('map').setView([43.18, -89.21], 12);
 const WI_VIEWBOX = '-92.889,47.080,-86.249,42.491';
 const STAGE_ORDER = ['High', 'Middle', 'Elementary'];
 const DEFAULT_POINT_COLOR = '#1f78b4';
-const SEARCH_ZOOM = 15;
+const SEARCH_ZOOM = 14;
 
 function stageRank(stage) {
     const idx = STAGE_ORDER.indexOf(stage);
@@ -180,7 +180,7 @@ var geocoder = L.Control.geocoder({
     geocoder: L.Control.Geocoder.nominatim({
         geocodingQueryParams: {
             countrycodes: 'us',
-            viewbox: '-92.889,47.080,-86.249,42.491', // WI bbox: west,north,east,south
+            viewbox: WI_VIEWBOX, // WI bbox: west,north,east,south
             bounded: 1
         }
     })
