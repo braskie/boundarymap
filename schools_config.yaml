@@ -1,0 +1,91 @@
+school:
+  - schoolid: 1
+    name: C.H. Bird
+    fullName: "C.H. Bird Elementary School"
+    stage: "Elementary"
+    address: "1170 N Bird Street"
+    primaryColor: "#2C3482"
+  - schoolid: 2
+    name: Eastside
+    fullName: "Eastside Elementary School"
+    stage: "Elementary"
+    address: "661 Elizabeth Lane"
+    primaryColor: "#2C3482"
+  - schoolid: 3
+    name: Northside
+    fullName: "Northside Elementary School"
+    stage: "Elementary"
+    address: "230 W Klubertanz Dr"
+    primaryColor: "#00005B"
+  - schoolid: 4
+    name: Royal Oaks
+    fullName: "Royal Oaks Elementary School"
+    stage: "Elementary"
+    address: "2215 Pennsylvania Avenue"
+    primaryColor: "#C20202"
+  - schoolid: 5
+    name: Westside
+    fullName: "Westside Elementary School"
+    stage: "Elementary"
+    address: "1320 Buena Vista Drive"
+    primaryColor: "#035717"
+  - schoolid: 6
+    name: Horizon
+    fullName: "Horizon Elementary School"
+    stage: "Elementary"
+    address: "625 N Heatherstone Dr"
+    primaryColor: "#6F0000"
+  - schoolid: 7
+    name: Creekside
+    fullName: "Creekside Elementary School"
+    stage: "Elementary"
+    address: "1251 O'Keeffe Ave"
+    primaryColor: "#085465"
+  - schoolid: 9
+    name: Patrick Marsh
+    fullName: "Patrick Marsh Middle School"
+    stage: "Middle"
+    address: "1351 Columbus Street"
+    primaryColor: "#2C3482"
+  - schoolid: 10
+    name: Prairie View
+    fullName: "Prairie View Middle School"
+    stage: "Middle"
+    address: "400 N Thompson Road"
+    primaryColor: "#6F0000"
+  - schoolid: 11
+    name: Sun Prairie East
+    fullName: "Sun Prairie East High School"
+    stage: "High"
+    address: "888 Grove St"
+    primaryColor: "#D12027"
+  - schoolid: 12
+    name: Prairie Phoenix Academy
+    fullName: "Prairie Phoenix Academy"
+    stage: "High"
+    address: "220 Kroncke Drive Suite 130"
+    primaryColor: "#0B522C"
+  - schoolid: 19
+    name: Token Springs
+    fullName: "Token Springs Elementary School"
+    stage: "Elementary"
+    address: "1435 N Thompson Rd"
+    primaryColor: "#25476A"
+  - schoolid: 20
+    name: Meadow View
+    fullName: "Meadow View Elementary School"
+    stage: "Elementary"
+    address: "200 N Grand Ave"
+    primaryColor: "#088093"
+  - schoolid: 21
+    name: Sun Prairie West
+    fullName: "Sun Prairie West High School"
+    stage: "High"
+    address: "2850 Ironwood Drive"
+    primaryColor: "#112644"
+  - schoolid: 22
+    name: Central Heights
+    fullName: "Central Heights Middle School"
+    stage: "Middle"
+    address: "220 Kroncke Drive Suite 100"
+    primaryColor: "#025157"
