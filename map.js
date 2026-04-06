@@ -176,6 +176,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Add the Search Bar (Wisconsin only)
 var geocoder = L.Control.geocoder({
     defaultMarkGeocode: false,
+    collapsed: false,
     geocoder: L.Control.Geocoder.nominatim({
         geocodingQueryParams: {
             countrycodes: 'us',
@@ -393,9 +394,9 @@ function createBoundaryHierarchyControl(stageGroups) {
             container.style.padding = '10px';
             container.style.border = '1px solid #bbb';
             container.style.borderRadius = '4px';
-            container.style.maxHeight = '320px';
+            container.style.maxHeight = '600px';
             container.style.overflowY = 'auto';
-            container.style.minWidth = '230px';
+            container.style.minWidth = '170px'; // was 230px
 
             const title = document.createElement('div');
             title.innerHTML = '<strong>School Boundaries</strong>';
